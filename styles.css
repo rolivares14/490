@@ -1,0 +1,235 @@
+:root {
+    --primary-color: rgba(212, 255, 215); /* replace with the color you want */
+    --secondary-color: rgba(251, 230, 198); /* replace with the color you want */
+    --glass-effect: rgba(14, 100, 50, 0.75);
+    --glass-effect2: rgba(251, 230, 198, 0.75);
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color);
+  }
+  
+.glass_effect1 {
+  background-color: var(--glass-effect);
+  backdrop-filter: blur(5px);
+}
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: var(--glass-effect); 
+    padding: 1rem 0;
+    box-shadow: 0 2px 45px rgba(1, 44, 19, 0.8);
+    z-index: 1000;
+  }
+  
+  .navbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar nav ul li {
+    padding: 0 1rem;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: hsl(186 100% 69%);
+    color: hsl(320, 63%, 53%);
+    color: crimson;
+    color: rgb(240, 208, 161);
+    color: rgb(245, 219, 181);
+    font-weight: bold;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li a:focus {
+    text-decoration: none;
+}
+
+/*this removes the glowing line under teh nav bar but is only needed when '.glowing-btn::before' in button.css isnt commented out
+/*.navbar nav ul li a::before {
+   content: none; /* Removes content from pseudo-elements */
+/*} */
+
+
+  .sidebar {
+    position: fixed;
+    top: calc(4rem + 100px);
+    left: 3rem;
+    width: 200px;
+    max-height: 90vh;
+    background: var(--glass-effect2);
+    backdrop-filter: blur(10px); 
+    padding: 1rem;
+    z-index: 500;
+    overflow-y: auto;
+    box-shadow: 2px 0 25px rgba(57, 34, 1, 0.8);
+    border-radius: 25px;
+  }
+
+  .sidebar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar nav ul li {
+    padding: 0.5rem 0; 
+  }
+  
+  .sidebar nav ul li a {
+    text-decoration: none;
+    color: rgb(3, 68, 31); 
+    display: block; 
+    padding: 0.5rem 1rem; 
+    border-radius: 15px; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .sidebar nav ul li a:hover,
+  .sidebar nav ul li a:focus {
+    background-color: rgb(212, 255, 215); 
+    outline: none; 
+  }
+  
+  
+  /*----------------------------------------------------------CHAT BOX CSS------------------------------------*/
+  /*.chatbox {
+      position: absolute;
+      top: 53%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%; 
+      max-width: 600px; 
+      height: 70vh; 
+      background: rgb(255, 245, 232);
+      padding: 2rem;
+      box-shadow: 0 4px 50px rgba(1, 44, 19, 0.8);
+      overflow-y: auto; /* For scrolling *8/
+      backdrop-filter: blur(20px);
+      border-radius: 25px;
+    }  */
+ 
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+	box-sizing: border-box;
+}
+
+.chat-container {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 25px;
+	box-shadow: 0 4px 50px rgb(1, 44, 19);
+	overflow-y: auto;
+	/*padding: 1rem;*/
+  padding-top: 0;
+	position: absolute;
+	width: 90%;
+	max-width: 600px;
+  height: 70vh;
+  backdrop-filter: blur(20px);
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('images/beige.jpg');
+  background-size: cover;
+}
+
+.chat-header {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  padding: 1.5rem;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  color: rgb(101, 220, 151);
+}
+
+.chat {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	list-style-type: none;
+	padding: 1rem;
+	margin: 0;
+}
+
+.message-left {
+	background-color: rgba(101, 220, 150, 0.75);
+	border-radius: 50px;
+	box-shadow: 0px 15px 5px 0px rgba(0,0,0,0.5);
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.message-right {
+	background-color: rgb(247, 225, 198);
+	border-radius: 50px;
+	box-shadow: 0px 15px 5px 0px rgba(0,0,0,0.5);
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.message.left {
+	padding: 1rem;
+}
+
+.message.right {
+	align-self: flex-end;
+	padding: 1rem;
+}
+
+.logo {
+	border-radius: 50%;
+	box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.7);
+	object-fit: cover;
+	position: absolute;
+	left: 10px;
+	top: -10px;
+	width: 50px;
+	height: 50px;
+}
+
+.message.right .logo {
+	left: auto;
+	right: 10px;
+}
+
+.message p {
+	margin: 0;
+}
+
+.text_input {
+	position: absolute; /* Position relative to the .chat-container */
+	bottom: 1.5rem; /* Align to the bottom of the .chat-container */
+	left: 0;
+	right: 0;
+	width: calc(100% - 4rem); 
+	margin: 0 auto; 
+	padding: 10px 15px; 
+	border-radius: 25px;
+	box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); 
+	background: rgba(255, 255, 255, 0.583); 
+	font-size: 16px; 
+	border: none; 
+	outline: none; 
+	overflow: hidden;
+  white-space: pre-wrap;
+}
+
+
+  
